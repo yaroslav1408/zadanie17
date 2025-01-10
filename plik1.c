@@ -1,24 +1,19 @@
 #include <stdio.h>
+#include <math.h>
 
-float calculateVolume(float length, float width, float height) {
-    return length * width * height;
+double calculateSphereVolume(double radius) {
+    return (4.0 / 3.0) * M_PI * pow(radius, 3);
 }
 
 int main() {
-    float length, width, height, volume;
+    double radius;
 
-    printf("Enter length: ");
-    scanf("%f", &length);
 
-    printf("Enter width: ");
-    scanf("%f", &width);
+    printf("Enter the radius of the sphere: ");
+    scanf("%lf", &radius);
 
-    printf("Enter height: ");
-    scanf("%f", &height);
-
-    volume = calculateVolume(length, width, height);
-
-    printf("The volume of the rectangular prism is: %.2f\n", volume);
+    double volume = calculateSphereVolume(radius);
+    printf("Volume of the sphere: %.2f\n", volume);
 
     return 0;
 }
